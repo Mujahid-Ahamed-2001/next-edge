@@ -1,3 +1,42 @@
+SET FOREIGN_KEY_CHECKS = 0;
+
+DROP TABLE IF EXISTS coupons;
+DROP TABLE IF EXISTS product_variant_attribute_values;
+DROP TABLE IF EXISTS media_relations;
+DROP TABLE IF EXISTS seo_meta;
+DROP TABLE IF EXISTS media_library;
+DROP TABLE IF EXISTS media_folders;
+DROP TABLE IF EXISTS promotion_products;
+DROP TABLE IF EXISTS promotions;
+DROP TABLE IF EXISTS stock_movements;
+DROP TABLE IF EXISTS inventory_stock;
+DROP TABLE IF EXISTS product_variants;
+DROP TABLE IF EXISTS product_category_relations;
+DROP TABLE IF EXISTS product_attribute_values;
+DROP TABLE IF EXISTS product_attributes;
+DROP TABLE IF EXISTS products;
+DROP TABLE IF EXISTS taxes;
+DROP TABLE IF EXISTS brands;
+DROP TABLE IF EXISTS product_categories;
+DROP TABLE IF EXISTS warehouses;
+DROP TABLE IF EXISTS address_relations;
+DROP TABLE IF EXISTS addresses;
+DROP TABLE IF EXISTS activity_logs;
+DROP TABLE IF EXISTS system_settings;
+DROP TABLE IF EXISTS supplier_bank_accounts;
+DROP TABLE IF EXISTS suppliers;
+DROP TABLE IF EXISTS customers;
+DROP TABLE IF EXISTS staff;
+DROP TABLE IF EXISTS user_roles;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS role_permissions;
+DROP TABLE IF EXISTS permissions;
+DROP TABLE IF EXISTS roles;
+DROP TABLE IF EXISTS statuses;
+DROP TABLE IF EXISTS currencies;
+DROP TABLE IF EXISTS branches;
+
+SET FOREIGN_KEY_CHECKS = 1;
 CREATE TABLE branches (
     id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 
@@ -24,7 +63,9 @@ CREATE TABLE currencies (
 
     currency_name VARCHAR(100),
 
-    currency_code VARCHAR(10),
+    country_name VARCHAR(100),
+
+    currency_code VARCHAR(10) NOT NULL,
 
     currency_symbol VARCHAR(20),
 
@@ -34,6 +75,140 @@ CREATE TABLE currencies (
 
     is_active TINYINT(1) DEFAULT 1
 );
+
+INSERT INTO `currencies` (`id`, `country_name`, `currency_name`, `currency_code`, `currency_symbol`) VALUES
+(1, 'Albania', 'Leke', 'ALL', 'Lek'),
+(2, 'America', 'Dollars', 'USD', '$'),
+(3, 'Afghanistan', 'Afghanis', 'AFN', '؋'),
+(4, 'Argentina', 'Pesos', 'ARS', '$'),
+(5, 'Aruba', 'Guilders', 'AWG', 'ƒ'),
+(6, 'Australia', 'Dollars', 'AUD', '$'),
+(7, 'Azerbaijan', 'New Manats', 'AZN', 'ман'),
+(8, 'Bahamas', 'Dollars', 'BSD', '$'),
+(9, 'Barbados', 'Dollars', 'BBD', '$'),
+(10, 'Belarus', 'Rubles', 'BYR', 'p.'),
+(11, 'Belgium', 'Euro', 'EUR', '€'),
+(12, 'Beliz', 'Dollars', 'BZD', 'BZ$'),
+(13, 'Bermuda', 'Dollars', 'BMD', '$'),
+(14, 'Bolivia', 'Bolivianos', 'BOB', '$b'),
+(15, 'Bosnia and Herzegovina', 'Convertible Marka', 'BAM', 'KM'),
+(16, 'Botswana', 'Pula', 'BWP', 'P'),
+(17, 'Bulgaria', 'Leva', 'BGN', 'лв'),
+(18, 'Brazil', 'Reais', 'BRL', 'R$'),
+(19, 'Britain (United Kingdom)', 'Pounds', 'GBP', '£'),
+(20, 'Brunei Darussalam', 'Dollars', 'BND', '$'),
+(21, 'Cambodia', 'Riels', 'KHR', '៛'),
+(22, 'Canada', 'Dollars', 'CAD', '$'),
+(23, 'Cayman Islands', 'Dollars', 'KYD', '$'),
+(24, 'Chile', 'Pesos', 'CLP', '$'),
+(25, 'China', 'Yuan Renminbi', 'CNY', '¥'),
+(26, 'Colombia', 'Pesos', 'COP', '$'),
+(27, 'Costa Rica', 'Colón', 'CRC', '₡'),
+(28, 'Croatia', 'Kuna', 'HRK', 'kn'),
+(29, 'Cuba', 'Pesos', 'CUP', '₱'),
+(30, 'Cyprus', 'Euro', 'EUR', '€'),
+(31, 'Czech Republic', 'Koruny', 'CZK', 'Kč'),
+(32, 'Denmark', 'Kroner', 'DKK', 'kr'),
+(33, 'Dominican Republic', 'Pesos', 'DOP ', 'RD$'),
+(34, 'East Caribbean', 'Dollars', 'XCD', '$'),
+(35, 'Egypt', 'Pounds', 'EGP', '£'),
+(36, 'El Salvador', 'Colones', 'SVC', '$'),
+(37, 'England (United Kingdom)', 'Pounds', 'GBP', '£'),
+(38, 'Euro', 'Euro', 'EUR', '€'),
+(39, 'Falkland Islands', 'Pounds', 'FKP', '£'),
+(40, 'Fiji', 'Dollars', 'FJD', '$'),
+(41, 'France', 'Euro', 'EUR', '€'),
+(42, 'Ghana', 'Cedis', 'GHC', '¢'),
+(43, 'Gibraltar', 'Pounds', 'GIP', '£'),
+(44, 'Greece', 'Euro', 'EUR', '€'),
+(45, 'Guatemala', 'Quetzales', 'GTQ', 'Q'),
+(46, 'Guernsey', 'Pounds', 'GGP', '£'),
+(47, 'Guyana', 'Dollars', 'GYD', '$'),
+(48, 'Holland (Netherlands)', 'Euro', 'EUR', '€'),
+(49, 'Honduras', 'Lempiras', 'HNL', 'L'),
+(50, 'Hong Kong', 'Dollars', 'HKD', '$'),
+(51, 'Hungary', 'Forint', 'HUF', 'Ft'),
+(52, 'Iceland', 'Kronur', 'ISK', 'kr'),
+(53, 'India', 'Rupees', 'INR', 'Rp'),
+(54, 'Indonesia', 'Rupiahs', 'IDR', 'Rp'),
+(55, 'Iran', 'Rials', 'IRR', '﷼'),
+(56, 'Ireland', 'Euro', 'EUR', '€'),
+(57, 'Isle of Man', 'Pounds', 'IMP', '£'),
+(58, 'Israel', 'New Shekels', 'ILS', '₪'),
+(59, 'Italy', 'Euro', 'EUR', '€'),
+(60, 'Jamaica', 'Dollars', 'JMD', 'J$'),
+(61, 'Japan', 'Yen', 'JPY', '¥'),
+(62, 'Jersey', 'Pounds', 'JEP', '£'),
+(63, 'Kazakhstan', 'Tenge', 'KZT', 'лв'),
+(64, 'Korea (North)', 'Won', 'KPW', '₩'),
+(65, 'Korea (South)', 'Won', 'KRW', '₩'),
+(66, 'Kyrgyzstan', 'Soms', 'KGS', 'лв'),
+(67, 'Laos', 'Kips', 'LAK', '₭'),
+(68, 'Latvia', 'Lati', 'LVL', 'Ls'),
+(69, 'Lebanon', 'Pounds', 'LBP', '£'),
+(70, 'Liberia', 'Dollars', 'LRD', '$'),
+(71, 'Liechtenstein', 'Switzerland Francs', 'CHF', 'CHF'),
+(72, 'Lithuania', 'Litai', 'LTL', 'Lt'),
+(73, 'Luxembourg', 'Euro', 'EUR', '€'),
+(74, 'Macedonia', 'Denars', 'MKD', 'ден'),
+(75, 'Malaysia', 'Ringgits', 'MYR', 'RM'),
+(76, 'Malta', 'Euro', 'EUR', '€'),
+(77, 'Mauritius', 'Rupees', 'MUR', '₨'),
+(78, 'Mexico', 'Pesos', 'MXN', '$'),
+(79, 'Mongolia', 'Tugriks', 'MNT', '₮'),
+(80, 'Mozambique', 'Meticais', 'MZN', 'MT'),
+(81, 'Namibia', 'Dollars', 'NAD', '$'),
+(82, 'Nepal', 'Rupees', 'NPR', '₨'),
+(83, 'Netherlands Antilles', 'Guilders', 'ANG', 'ƒ'),
+(84, 'Netherlands', 'Euro', 'EUR', '€'),
+(85, 'New Zealand', 'Dollars', 'NZD', '$'),
+(86, 'Nicaragua', 'Cordobas', 'NIO', 'C$'),
+(87, 'Nigeria', 'Nairas', 'NGN', '₦'),
+(88, 'North Korea', 'Won', 'KPW', '₩'),
+(89, 'Norway', 'Krone', 'NOK', 'kr'),
+(90, 'Oman', 'Rials', 'OMR', '﷼'),
+(91, 'Pakistan', 'Rupees', 'PKR', '₨'),
+(92, 'Panama', 'Balboa', 'PAB', 'B/.'),
+(93, 'Paraguay', 'Guarani', 'PYG', 'Gs'),
+(94, 'Peru', 'Nuevos Soles', 'PEN', 'S/.'),
+(95, 'Philippines', 'Pesos', 'PHP', 'Php'),
+(96, 'Poland', 'Zlotych', 'PLN', 'zł'),
+(97, 'Qatar', 'Rials', 'QAR', '﷼'),
+(98, 'Romania', 'New Lei', 'RON', 'lei'),
+(99, 'Russia', 'Rubles', 'RUB', 'руб'),
+(100, 'Saint Helena', 'Pounds', 'SHP', '£'),
+(101, 'Saudi Arabia', 'Riyals', 'SAR', '﷼'),
+(102, 'Serbia', 'Dinars', 'RSD', 'Дин.'),
+(103, 'Seychelles', 'Rupees', 'SCR', '₨'),
+(104, 'Singapore', 'Dollars', 'SGD', '$'),
+(105, 'Slovenia', 'Euro', 'EUR', '€'),
+(106, 'Solomon Islands', 'Dollars', 'SBD', '$'),
+(107, 'Somalia', 'Shillings', 'SOS', 'S'),
+(108, 'South Africa', 'Rand', 'ZAR', 'R'),
+(109, 'South Korea', 'Won', 'KRW', '₩'),
+(110, 'Spain', 'Euro', 'EUR', '€'),
+(111, 'Sri Lanka', 'Rupees', 'LKR', '₨'),
+(112, 'Sweden', 'Kronor', 'SEK', 'kr'),
+(113, 'Switzerland', 'Francs', 'CHF', 'CHF'),
+(114, 'Suriname', 'Dollars', 'SRD', '$'),
+(115, 'Syria', 'Pounds', 'SYP', '£'),
+(116, 'Taiwan', 'New Dollars', 'TWD', 'NT$'),
+(117, 'Thailand', 'Baht', 'THB', '฿'),
+(118, 'Trinidad and Tobago', 'Dollars', 'TTD', 'TT$'),
+(119, 'Turkey', 'Lira', 'TRY', 'TL'),
+(120, 'Turkey', 'Liras', 'TRL', '£'),
+(121, 'Tuvalu', 'Dollars', 'TVD', '$'),
+(122, 'Ukraine', 'Hryvnia', 'UAH', '₴'),
+(123, 'United Kingdom', 'Pounds', 'GBP', '£'),
+(124, 'United States of America', 'Dollars', 'USD', '$'),
+(125, 'Uruguay', 'Pesos', 'UYU', '$U'),
+(126, 'Uzbekistan', 'Sums', 'UZS', 'лв'),
+(127, 'Vatican City', 'Euro', 'EUR', '€'),
+(128, 'Venezuela', 'Bolivares Fuertes', 'VEF', 'Bs'),
+(129, 'Vietnam', 'Dong', 'VND', '₫'),
+(130, 'Yemen', 'Rials', 'YER', '﷼'),
+(131, 'Zimbabwe', 'Zimbabwe Dollars', 'ZWD', 'Z$'),
+(132, 'India', 'Rupees', 'INR', '₹');
 
 CREATE TABLE statuses (
 
@@ -54,6 +229,87 @@ CREATE TABLE statuses (
     is_active TINYINT(1) DEFAULT 1
 );
 
+
+INSERT INTO statuses
+(status_code, module_name, status_name, status_color, sort_order, is_default, is_active)
+VALUES
+
+-- COMMON
+('ACTIVE','common','Active','#28a745',1,1,1),
+('INACTIVE','common','Inactive','#dc3545',2,0,1),
+
+-- ORDERS
+('PENDING','orders','Pending','#ffc107',1,1,1),
+('CONFIRMED','orders','Confirmed','#17a2b8',2,0,1),
+('PROCESSING','orders','Processing','#007bff',3,0,1),
+('PACKED','orders','Packed','#6f42c1',4,0,1),
+('DISPATCHED','orders','Dispatched','#6610f2',5,0,1),
+('DELIVERED','orders','Delivered','#28a745',6,0,1),
+('CANCELLED','orders','Cancelled','#dc3545',7,0,1),
+('RETURNED','orders','Returned','#fd7e14',8,0,1),
+
+-- QUOTATIONS
+('DRAFT','quotations','Draft','#6c757d',1,1,1),
+('SENT','quotations','Sent','#17a2b8',2,0,1),
+('VIEWED','quotations','Viewed','#007bff',3,0,1),
+('ACCEPTED','quotations','Accepted','#28a745',4,0,1),
+('REJECTED','quotations','Rejected','#dc3545',5,0,1),
+('EXPIRED','quotations','Expired','#343a40',6,0,1),
+('CONVERTED','quotations','Converted to Order','#20c997',7,0,1),
+
+-- PAYMENTS
+('PENDING','payments','Pending','#ffc107',1,1,1),
+('PAID','payments','Paid','#28a745',2,0,1),
+('FAILED','payments','Failed','#dc3545',3,0,1),
+('REFUNDED','payments','Refunded','#fd7e14',4,0,1),
+('PARTIAL','payments','Partially Paid','#17a2b8',5,0,1),
+
+-- INVOICES
+('DRAFT','invoices','Draft','#6c757d',1,1,1),
+('ISSUED','invoices','Issued','#007bff',2,0,1),
+('PARTIAL','invoices','Partially Paid','#17a2b8',3,0,1),
+('PAID','invoices','Paid','#28a745',4,0,1),
+('OVERDUE','invoices','Overdue','#dc3545',5,0,1),
+('VOID','invoices','Void','#343a40',6,0,1),
+
+-- PRODUCTS
+('ACTIVE','products','Active','#28a745',1,1,1),
+('INACTIVE','products','Inactive','#dc3545',2,0,1),
+('OUT_OF_STOCK','products','Out Of Stock','#fd7e14',3,0,1),
+('DISCONTINUED','products','Discontinued','#343a40',4,0,1),
+
+-- SERVICES
+('ACTIVE','services','Active','#28a745',1,1,1),
+('INACTIVE','services','Inactive','#dc3545',2,0,1),
+('COMING_SOON','services','Coming Soon','#17a2b8',3,0,1),
+
+-- CUSTOMERS
+('ACTIVE','customers','Active','#28a745',1,1,1),
+('INACTIVE','customers','Inactive','#dc3545',2,0,1),
+('BLOCKED','customers','Blocked','#343a40',3,0,1),
+
+-- SUPPLIERS
+('ACTIVE','suppliers','Active','#28a745',1,1,1),
+('INACTIVE','suppliers','Inactive','#dc3545',2,0,1),
+('BLACKLISTED','suppliers','Blacklisted','#343a40',3,0,1),
+
+-- EXPENSES
+('DRAFT','expenses','Draft','#6c757d',1,1,1),
+('APPROVED','expenses','Approved','#28a745',2,0,1),
+('REJECTED','expenses','Rejected','#dc3545',3,0,1),
+('PAID','expenses','Paid','#17a2b8',4,0,1),
+
+-- INQUIRIES
+('NEW','inquiries','New','#007bff',1,1,1),
+('ASSIGNED','inquiries','Assigned','#17a2b8',2,0,1),
+('IN_PROGRESS','inquiries','In Progress','#ffc107',3,0,1),
+('CLOSED','inquiries','Closed','#28a745',4,0,1),
+
+-- STAFF
+('ACTIVE','staff','Active','#28a745',1,1,1),
+('INACTIVE','staff','Inactive','#dc3545',2,0,1),
+('ON_LEAVE','staff','On Leave','#ffc107',3,0,1),
+('TERMINATED','staff','Terminated','#343a40',4,0,1);
 
 
 CREATE TABLE roles (
@@ -76,10 +332,10 @@ CREATE TABLE roles (
 CREATE TABLE permissions (
     id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 
-    permission_name VARCHAR(255),
-    permission_code VARCHAR(255) UNIQUE,
+    permission_name VARCHAR(255) NOT NULL,
+    permission_code VARCHAR(255) NOT NULL UNIQUE,
 
-    module_name VARCHAR(150),
+    module_name VARCHAR(150) NOT NULL,
 
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
@@ -115,7 +371,7 @@ CREATE TABLE users (
         'customer',
         'supplier',
         'system'
-    ),
+    ) NOT NULL,
 
     email_verified TINYINT(1) DEFAULT 0,
 

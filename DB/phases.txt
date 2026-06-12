@@ -39,15 +39,7 @@ income
 *  Phase 6 (CMS)
 blogs
 portfolios
-testimonials
-clients
-inquiries
-pages
-SEO
 *  Phase 7 (Customer Portal)
-reviews
-wishlists
-tickets
 notifications
 *  Phase 8 (Advanced)
 API logs

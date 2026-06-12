@@ -1,0 +1,8 @@
+HRM
+Payroll
+Attendance
+Leave Management
+Fingerprint Integration
+Recruitment
+Asset Management
+Purchasing & Procurement
