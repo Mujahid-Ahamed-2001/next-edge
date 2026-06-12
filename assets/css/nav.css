@@ -1,0 +1,256 @@
+/* NAVBAR */
+#navigation {
+    padding: 18px 60px;
+    background: #ffffffd6;
+    font-family: 'Poppins', sans-serif;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.site-logo img {
+    height: 40px;
+}
+
+/* MENU */
+#main-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#main-menu ul li {
+    display: inline-block;
+    margin: 0 18px;
+    position: relative;
+}
+
+#main-menu ul li a {
+    color: #1a1a1a;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 1s;
+    font-family: 'Poppins', sans-serif;
+    /* display: inline-block; */
+}
+
+#main-menu ul li a:hover {
+    /* display: block; */
+    color: #4f46e5;
+    transform: translateY(-5px);
+}
+
+/* DROPDOWN */
+#main-menu ul li ul {
+    position: absolute;
+    top: 120%;
+    left: 0;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    padding: 10px 0;
+    min-width: 220px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 999;
+}
+
+#main-menu ul li:hover ul {
+    opacity: 1;
+    visibility: visible;
+    top: 100%;
+}
+
+#main-menu ul li ul li {
+    display: block;
+    margin: 0;
+}
+
+#main-menu ul li ul li a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #444;
+}
+
+#main-menu ul li ul li a:hover {
+    background: #f5f7ff;
+    color: #4f46e5;
+}
+#main-menu ul li a i {
+    font-size: 1rem;
+    margin-left: 6px;
+    transition: 0.3s;
+    position: relative;
+    top: 1px;
+}
+
+#main-menu ul li.has-dropdown:hover > a i {
+    transform: rotate(180deg);
+}
+
+
+/* BUTTON */
+.btn_one {
+    background: linear-gradient(135deg, #4f46e5, #6366f1);
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.btn_one:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(79,70,229,0.3);
+}
+
+/* ALIGNMENT FIX */
+.row {
+    align-items: center;
+}
+
+/* MOBILE */
+@media (max-width: 991px) {
+    #main-menu {
+        display: none;
+    }
+}
+/* MOBILE TOGGLE */
+.mobile-toggle {
+    background: none;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    color: #1a1a1a;
+    transition: all ease 1s;
+    position: relative;
+}
+.mobile-toggle i{
+    transition: all ease 1s;
+}
+.mobile-toggle i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity .3s ease, transform .3s ease;
+}
+
+.icon-close{
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+.mobile-toggle.active .icon-menu{
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.mobile-toggle.active .icon-close{
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+/* MOBILE MENU */
+#mobile-menu {
+    display: none;
+    background: #fff;
+    border-top: 1px solid #eee;
+    padding: 20px;
+}
+
+#mobile-menu.active {
+    display: block;
+}
+
+#mobile-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#mobile-menu ul li {
+    margin-bottom: 12px;
+}
+
+#mobile-menu ul li a {
+    color: #1a1a1a;
+    text-decoration: none;
+    display: block;
+    padding: 8px 0;
+    font-weight: 500;
+}
+
+#mobile-menu ul li ul {
+    margin-left: 0;
+    margin-top: 8px;
+}
+
+#mobile-menu ul li ul li {
+    margin-bottom: 5px;
+}
+.submenu {
+    /* display: none; */
+    padding-left: 15px;
+}
+.mobile-submenu {
+    display: none;
+}
+.mobile-dropdown.active .mobile-submenu {
+    /* display: block; */
+}
+
+.mobile-dropdown > a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.submenu-toggle {
+    cursor: pointer;
+}
+
+.submenu-toggle i {
+    transition: 0.3s;
+}
+
+.mobile-dropdown.active .submenu-toggle i {
+    transform: rotate(180deg);
+}
+
+@media (max-width: 991px) {
+
+    #navigation {
+        padding: 15px 20px;
+    }
+
+    .site-logo img {
+        height: 34px;
+        max-width: 100%;
+    }
+
+    .btn_one {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+
+    #navigation {
+        padding: 12px 15px;
+    }
+
+    .site-logo img {
+        height: 30px;
+    }
+
+    .mobile-toggle {
+        font-size: 28px;
+    }
+}   

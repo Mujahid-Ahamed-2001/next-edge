@@ -1,0 +1,295 @@
+/* ==========================================
+   FOOTER
+========================================== */
+
+.site-footer{
+    background:#fff;
+    border-top:1px solid #edf0f7;
+    padding-top:70px;
+}
+
+.footer-brand img{
+    max-width:180px;
+    margin-bottom:20px;
+}
+
+.footer-brand p{
+    color:#6b7280;
+    font-size:14px;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+/* SOCIAL */
+
+.footer-social{
+    display:flex;
+    gap:12px;
+}
+
+.footer-social a{
+    width:36px;
+    height:36px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#f5f7ff;
+    color:#4338ca;
+
+    transition:.3s;
+}
+
+.footer-social a:hover{
+    background:#4338ca;
+    color:#fff;
+}
+
+/* WIDGET */
+
+.footer-widget h4{
+    font-size:16px;
+    font-weight:700;
+    margin-bottom:20px;
+    color:#111827;
+}
+
+.footer-widget ul{
+    padding:0;
+    margin:0;
+    list-style:none;
+}
+
+.footer-widget ul li{
+    margin-bottom:10px;
+}
+
+.footer-widget ul li a{
+    color:#6b7280;
+    font-size:14px;
+    transition:.3s;
+}
+
+.footer-widget ul li a:hover{
+    color:#4338ca;
+    padding-left:5px;
+}
+
+/* CONTACT */
+
+.footer-contact li{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    color:#6b7280;
+    font-size:14px;
+    margin-bottom:15px;
+}
+
+.footer-contact i{
+    color:#4338ca;
+    margin-top:3px;
+}
+
+/* BOTTOM */
+
+.footer-bottom{
+    border-top:1px solid #edf0f7;
+    margin-top:50px;
+    padding:20px 0;
+}
+.site-footer .row{
+    align-items:flex-start !important;
+}
+.site-footer .col-lg-1,
+.site-footer .col-lg-2,
+.site-footer .col-lg-3{
+    display:flex;
+    align-items:flex-start;
+}
+.footer-bottom-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+
+    font-size:13px;
+    color:#6b7280;
+}
+
+.footer-bottom-links{
+    display:flex;
+    gap:25px;
+}
+
+.footer-bottom-links a{
+    color:#6b7280;
+}
+
+.footer-bottom-links a:hover{
+    color:#4338ca;
+}
+/* ==========================================
+   FOOTER RESPONSIVE
+========================================== */
+
+@media (max-width: 1199px){
+
+    .footer-brand img{
+        max-width:160px;
+    }
+
+    .footer-widget h4{
+        font-size:15px;
+    }
+
+}
+
+@media (max-width: 991px){
+
+    .site-footer{
+        padding-top:60px;
+    }
+
+    .site-footer .col-lg-1,
+    .site-footer .col-lg-2,
+    .site-footer .col-lg-3,
+    .site-footer .col-md-6{
+        display:block;
+    }
+
+    .footer-brand,
+    .footer-widget{
+        margin-bottom:35px;
+    }
+
+    .footer-brand{
+        text-align:center;
+    }
+
+    .footer-social{
+        justify-content:center;
+    }
+
+    .footer-widget h4{
+        margin-bottom:15px;
+    }
+
+}
+
+@media (max-width: 767px){
+
+    .site-footer{
+        padding-top:50px;
+    }
+
+    .footer-brand{
+        text-align:left;
+    }
+
+    .footer-social{
+        justify-content:flex-start;
+    }
+
+    .footer-brand img{
+        max-width:150px;
+    }
+
+    .footer-brand p{
+        font-size:13px;
+        line-height:1.7;
+    }
+
+    .footer-widget{
+        margin-bottom:30px;
+    }
+
+    .footer-widget h4{
+        font-size:15px;
+        margin-bottom:12px;
+    }
+
+    .footer-widget ul li{
+        margin-bottom:8px;
+    }
+
+    .footer-widget ul li a{
+        font-size:13px;
+    }
+
+    .footer-contact li{
+        font-size:13px;
+    }
+
+    .footer-bottom{
+        margin-top:20px;
+        padding:15px 0;
+    }
+
+    .footer-bottom-inner{
+        flex-direction:column;
+        text-align:center;
+        gap:10px;
+    }
+
+    .footer-bottom-links{
+        justify-content:center;
+        flex-wrap:wrap;
+        gap:15px;
+    }
+
+}
+
+@media (max-width: 480px){
+
+    .site-footer{
+        padding-top:40px;
+    }
+
+    .footer-brand img{
+        max-width:140px;
+        margin-bottom:15px;
+    }
+
+    .footer-brand p{
+        font-size:12px;
+    }
+
+    .footer-social{
+        gap:8px;
+    }
+
+    .footer-social a{
+        width:32px;
+        height:32px;
+        font-size:14px;
+    }
+
+    .footer-widget h4{
+        font-size:14px;
+    }
+
+    .footer-widget ul li a{
+        font-size:12px;
+    }
+
+    .footer-contact li{
+        font-size:12px;
+    }
+
+    .footer-bottom{
+        font-size:12px;
+    }
+
+    .footer-bottom-inner{
+        font-size:12px;
+    }
+
+    .footer-bottom-links{
+        gap:10px;
+    }
+
+}

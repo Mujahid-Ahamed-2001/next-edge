@@ -1,0 +1,57 @@
+*  Phase 1 (Foundation)
+users
+roles
+permissions
+staff
+customers
+suppliers
+statuses
+settings
+activity logs
+*  Phase 2 (Products & Inventory)
+products
+categories
+images
+pricing
+stock
+warehouses
+stock movements
+promotions
+*  Phase 3 (Services)
+services
+service categories
+service packages
+package features
+service reviews
+*  Phase 4 (Sales)
+carts
+orders
+order items
+order tracking
+payments
+quotations
+*  Phase 5 (Finance)
+chart of accounts
+journal entries
+ledgers
+expenses
+income
+*  Phase 6 (CMS)
+blogs
+portfolios
+testimonials
+clients
+inquiries
+pages
+SEO
+*  Phase 7 (Customer Portal)
+reviews
+wishlists
+tickets
+notifications
+*  Phase 8 (Advanced)
+API logs
+email logs
+audit logs
+media library
+workflow automation
