@@ -33,6 +33,6 @@
     <!-- Template CSS -->
     <link rel="stylesheet" href="./assets/css/style.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.6.1/css/iziModal.min.css">
+    <link rel="stylesheet" href="./assets/css/iziModal.min.css">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/izitoast@1.4.0/dist/css/iziToast.min.css">
+    <link rel="stylesheet" href="./assets/css/iziToast.min.css">
