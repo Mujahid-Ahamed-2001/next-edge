@@ -2,8 +2,7 @@
     <div class="container-fluid">
         <div class="row align-items-center">
 
-            <!-- LOGO -->
-            <div class="col-6 col-lg-3">
+            <div class="col-6 col-lg-2">
                 <div class="site-logo">
                     <a href="./">
                         <img src="./assets/img/Next-edge-logo-horizontal.png" alt="Next Edge">
@@ -11,8 +10,7 @@
                 </div>
             </div>
 
-            <!-- DESKTOP MENU -->
-            <div class="col-lg-6 text-center d-none d-lg-block">
+            <div class="col-lg-8 text-center d-none d-lg-block">
                 <nav id="main-menu">
                     <ul>
                         <li><a href="./">Home</a></li>
@@ -45,7 +43,7 @@
             </div>
 
             <!-- BUTTON -->
-            <div class="col-lg-3 text-end d-none d-lg-block">
+            <div class="col-lg-2 text-end d-none d-lg-block">
                 <a href="./" class="btn_one">Get a Quote →</a>
             </div>
 
@@ -60,7 +58,6 @@
         </div>
     </div>
 
-    <!-- MOBILE MENU -->
     <div id="mobile-menu">
         <ul>
             <li><a href="./">Home</a></li>
