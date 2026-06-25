@@ -35,19 +35,15 @@
                         </li>
 
                         <li><a href="./">Smart Edge POS</a></li>
-                        <li><a href="./">Portfolio</a></li>
+                        <li><a href="./portfolio">Portfolio</a></li>
                         <li><a href="./blog">Blog</a></li>
                         <li><a href="./">Contact</a></li>
                     </ul>
                 </nav>
             </div>
-
-            <!-- BUTTON -->
             <div class="col-lg-2 text-end d-none d-lg-block">
                 <a href="./" class="btn_one">Get a Quote →</a>
             </div>
-
-            <!-- MOBILE TOGGLE -->
             <div class="col-6 d-lg-none text-end">
                 <button class="mobile-toggle" id="mobileToggle">
                     <i class="ti ti-menu-2 icon-menu"></i>
@@ -96,7 +92,7 @@
             </li>
 
             <li><a href="./">Smart Edge POS</a></li>
-            <li><a href="./">Portfolio</a></li>
+            <li><a href="./portfolio">Portfolio</a></li>
             <li><a href="./blog">Blog</a></li>
             <li><a href="./">Contact</a></li>
 
